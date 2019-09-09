@@ -10,7 +10,7 @@ class RuBankCurrencyExchanger {
     static _getUrlForDate(date) {
         date = date ? date : new Date();
         //06.06.2019
-        let strDate = format(date, "dd.mm.yyyy");
+        let strDate = format(date, "dd.MM.yyyy");
 
         return RuBankCurrencyExchanger.SOURCE+'?date_req='+strDate;
     }
