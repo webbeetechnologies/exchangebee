@@ -1,0 +1,4 @@
+# Ignoring files.
+.gitignore
+# Not ignoring files.
+!.gitignore
