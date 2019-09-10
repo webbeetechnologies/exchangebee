@@ -76,7 +76,7 @@ class RuBankCurrencyExchanger {
 
         for(let currencyCode in rates) {
             if(!rates.hasOwnProperty(currencyCode)) { continue; }
-            rates[currencyCode]['rate'] = await this.getExchangeRate(baseCurrency,currencyCode, date)
+            rates[currencyCode]['rate'] = await this.getExchangeRate(currencyCode,baseCurrency, date)
         }
 
         return rates;
