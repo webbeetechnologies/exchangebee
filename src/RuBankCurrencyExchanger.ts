@@ -25,7 +25,7 @@ class RuBankCurrencyExchanger {
         //06.06.2019
         let strDate = format(date, "dd.MM.yyyy");
 
-        return RuBankCurrencyExchanger.SOURCE + '?date_req=' + strDate;
+        return RuBankCurrencyExchanger.SOURCE + '?UniDbQuery.Posted=True&UniDbQuery.To=' + strDate;
     }
 
     async getOfficialExchangeRates(date: Date | null = null): Promise<ExchangeRates> {
@@ -48,7 +48,9 @@ class RuBankCurrencyExchanger {
                 let row: { [key: string]: any } = {},
                     columnI = 0;
 
+                // @ts-ignore
                 $(this).find('td').each(function () {
+                    // @ts-ignore
                     let textValue = $(this).text();
                     let columnKey = tableColumns[columnI];
 

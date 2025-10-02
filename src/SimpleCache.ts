@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as fs from 'fs-extra';
-import * as md5 from 'md5';
+var md5 = require('md5');
 
 const getFileTime = async (path: string): Promise<Date> => (await fs.stat(path)).mtime;
 
